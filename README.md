@@ -5,8 +5,8 @@
 2. 基于作者本人踩坑经验，不建议在CentOS上部署IOTQQ
 
 ## 构建前准备
-* 使用Github账号登录Gitter Developer，获取Gitter Token。[传送门](https://developer.gitter.im/apps)
-* 下载IOTQQ 3.0.0的二进制发布版，请选择IOTQQ_3.0.0_linux_amd64版本。[传送门](https://gitter.im/IOTQQTalk/IOTQQ)。其实在Dockerfile里用wget现下载也是可以的，但是腾讯云连Gitter的速度实在是蛋疼，所以这里预先下载好。
+* 使用Github账号登录Gitter Developer，获取Gitter Token。这里[传送门](https://developer.gitter.im/apps)
+* 下载IOTQQ 3.0.0的二进制发布版，请选择IOTQQ_3.0.0_linux_amd64版本。其实在Dockerfile里用wget现下载也是可以的，但是腾讯云连Gitter的速度实在是蛋疼，所以这里预先下载好。这里[传送门](https://gitter.im/IOTQQTalk/IOTQQ)
 * 安装Docker：请参考[这篇文章](https://www.jianshu.com/p/80e3fd18a17e)
 
 ## 构建镜像
