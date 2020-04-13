@@ -5,7 +5,7 @@
 2. 基于作者本人踩坑经验，不建议在CentOS上部署IOTQQ
 
 ## 构建前准备
-* 使用Github账号登录Gitter Developer，获取Gitter Token。这里[传送门](https://developer.gitter.im/apps)
+* 使用Github账号登录Gitter Developer，获取**Gitter Token**。这里[传送门](https://developer.gitter.im/apps)
 * 下载IOTQQ 3.0.0的二进制发布版，请选择IOTQQ_3.0.0_linux_amd64版本。其实在Dockerfile里用wget现下载也是可以的，但是腾讯云连Gitter的速度实在是蛋疼，所以这里预先下载好。这里[传送门](https://gitter.im/IOTQQTalk/IOTQQ)
 * 安装Docker：请参考[这篇文章](https://www.jianshu.com/p/80e3fd18a17e)
 
@@ -15,8 +15,8 @@
   ```shell
   docker build --no-cache --build-arg Token=<GitterToken> -t iotqq:nobind .
   ```
-* 上面命令中的<GitterToken>请用你获取到的Gitter Token代替
-* 此命令将会构建一个标签为iotqq:nobind的docker镜像，镜像中已经正确安装了IOTQQ并修改了配置文件
+* 上面命令中的`<GitterToken>`请用你获取到的Gitter Token代替
+* 此命令将会构建一个标签为`iotqq:nobind`的docker镜像，镜像中已经正确安装了IOTQQ并修改了配置文件
 * 使用`docker images`可以看到你的镜像在本地镜像仓库中
 * 可以用`docker rmi iotqq:nobind -f`来删除镜像
 
@@ -25,7 +25,7 @@
   ```shell
   docker run -p 0.0.0.0:8888:8888 -d --name iotqq_8888 iotqq:nobind /root/IOTQQ/IOTQQ
   ```
-* 这个命令会基于前面的iotqq:nobind镜像在后台启动一个docker容器，并把容器的8888端口映射到宿主服务器的8888端口上。容器启动后自动开启IOTQQ
+* 这个命令会基于前面的`iotqq:nobind`镜像在后台启动一个docker容器，并把容器的8888端口映射到宿主服务器的8888端口上。容器启动后自动开启IOTQQ
 * 可以用这个命令来实时跟踪容器中IOTQQ的日志：`docker logs iotqq_8888 -tf --tail 10`
   看到日志中显示`[D]  Everything is ok!`说明IOTQQ已经成功启动，此时就可以登录了
 * 打开浏览器访问http://<宿主服务器公网地址>:8888/v1/Login/GetQRcode即可获取登录二维码，需用手机QQ扫码登录
